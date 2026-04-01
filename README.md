@@ -33,27 +33,27 @@ cd claude-code
 bun install
 
 # Run directly
-bun src/main.tsx -p "your prompt here" --output-format text
+bun run src/entrypoints/cli.tsx -p "your prompt here" --output-format text
 ```
 
 ### Build (Optional)
 
 ```bash
 # Compile to single bundle (~20MB)
-bun build src/main.tsx --outdir=dist --target=bun
+bun build src/entrypoints/cli.tsx --outdir=dist --target=bun
 ```
 
 ### Run Modes
 
 ```bash
 # Headless print mode (no TTY needed)
-bun src/main.tsx -p "your prompt here" --output-format text
+bun run src/entrypoints/cli.tsx -p "your prompt here" --output-format text
 
 # JSON output
-bun src/main.tsx -p "your prompt here" --output-format json
+bun run src/entrypoints/cli.tsx -p "your prompt here" --output-format json
 
 # Interactive REPL mode (needs TTY)
-bun src/main.tsx
+bun run src/entrypoints/cli.tsx
 ```
 
 > **Note**: If `ANTHROPIC_API_KEY` is set in your environment, it must be valid. To use OAuth instead, unset it:
